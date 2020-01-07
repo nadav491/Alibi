@@ -9,16 +9,15 @@ import android.view.MenuInflater;
 import android.view.View;
 import android.widget.Button;
 
-import shared.Meeting;
-
 public class MainActivity extends AppCompatActivity {
 
+    private Button register, meeting;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button login = findViewById(R.id.register);
-        login.setOnClickListener(new View.OnClickListener() {
+        this.register = findViewById(R.id.button_main_register);
+        this.register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intentMain = new Intent(MainActivity.this , Register.class);
@@ -26,8 +25,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button meeting = findViewById(R.id.meeting);
-        meeting.setOnClickListener(new View.OnClickListener() {
+        this.meeting = findViewById(R.id.button_main_meeting);
+        this.meeting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intentMain = new Intent(MainActivity.this , MeetingsList.class);
